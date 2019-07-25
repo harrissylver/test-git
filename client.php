@@ -68,19 +68,3 @@
 				echo $result; 
 		}
 
-
-		elseif ($postjson['aksi'] == 'get_search'){
-			$data = array();
-			$query = mysqli_query($mysqli,"SELECT * FROM client WHERE NumCli='$postjson[Search]' ORDER BY NumCli DESC");
-
-				while ($row= mysqli_fetch_array($query)){
-					$data[]=array(
-						'NumCli'=> $row['NumCli'],
-						'Nom'=> $row['Nom'],
-					);
-				}
-
-				if ($query) $result = json_encode(array('success'=>true,'result'=>$data));
-				else $result = json_encode(array('success'=>false));
-				echo $result; 
-		}
