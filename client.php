@@ -67,10 +67,4 @@
 				else $result = json_encode(array('success'=>false));
 				echo $result; 
 		}
- elseif ($postjson['aksi'] == 'delete_test') {
- 	
- $query = mysqli_query($mysqli,"DELETE FROM client WHERE NumCli='$postjson[NumCli]'");
 
-				if ($query) $result = json_encode(array('success'=>true));
-				else $result = json_encode(array('success'=>false));
-				echo $result; 
